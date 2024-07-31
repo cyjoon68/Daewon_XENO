@@ -16,7 +16,7 @@ const ProductInfoContainer = () => {
     const { productColorId } = useParams<{ productColorId: string }>();
     const { data, isError, error, isPending, refetch } = useProductColorRead(+productColorId);
 
-    const setName = useSetRecoilState(nameState)
+    const setName = useSetRecoilState(nameState);
 
     const productInfo: ProductInfoType = data;
 
@@ -33,11 +33,8 @@ const ProductInfoContainer = () => {
         <>
             <ProductImagesSlideList productImages={productInfo.productImages} />
             <ProductInfo product={productInfo} />
-
             {productInfo.booleanColor && (<ProductOtherColorImageList />)}
-            
             <ProductDetailImage productColorId={productColorId} />
-
             <ReviewInfoList productColorId={productColorId} />
         </>
     );

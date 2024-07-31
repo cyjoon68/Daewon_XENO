@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import style from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
 import ProductImageSkeleton from "@/(FSD)/shareds/ui/ProductImageSkeleton";
 import { Button } from "@nextui-org/button";
-import { useProductColorDetailImageListRead } from "@/(FSD)/entities/product/api/useProductColorDetailImageListRead";
+import { useProductDetailImageListRead } from "@/(FSD)/entities/product/api/useProductDetailImageListRead";
 
 interface ProductDetailImageProps {
     productColorId: string;
@@ -15,7 +15,7 @@ const ProductDetailImage = ({ productColorId }: ProductDetailImageProps) => {
     const [size, setSize] = useState(2);
     const [isOpen, setIsOpen] = useState(false);
     const [loaded, setLoaded] = useState(false);
-    const { data, isError, error, isPending, refetch } = useProductColorDetailImageListRead(+productColorId, size);
+    const { data, isError, error, isPending, refetch } = useProductDetailImageListRead(+productColorId, size);
 
     useEffect(() => {
         refetch();
