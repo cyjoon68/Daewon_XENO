@@ -26,7 +26,7 @@ const ProductRankTopList = () => {
             </div>
             {(productCardList.length <= 3) && <ProductCardList productList={productCardList} isRank={true} />}
             {(productCardList.length > 3) && <ProductCardSlideList productList={productCardList} isRank={true} />}
-            {(!productCardList.length) && <div className={styles.un_box}><TextMediumShared className={"text-default-400"}>상품 후기가 3개 이하입니다.</TextMediumShared></div>}
+            {(!productCardList.length) && <div className={styles.un_box}><TextMediumShared className={"text-default-400"}>상품이 존재하지 않습니다.</TextMediumShared></div>}
         </div>
     )
 }
