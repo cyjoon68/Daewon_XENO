@@ -9,6 +9,7 @@ import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";
 import { ProductType } from "@/(FSD)/shareds/types/product/Product.type";
 import ProductCardList from "./ProductCardList";
 import { useProductRankListRead } from "@/(FSD)/entities/product/api/useProductRankListRead";
+import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 
 const ProductRankOuterList = () => {
     const { data } = useProductRankListRead({ type: "아우터" });
@@ -23,8 +24,9 @@ const ProductRankOuterList = () => {
                 <TextLargeShared>아우터 인기 순위</TextLargeShared>
                 {(productCardList.length > 10) && <Link href={"/rank/pants"}><TextSmallShared>더보기</TextSmallShared></Link>}
             </div>
-            {(productCardList.length <= 5) && <ProductCardList productList={productCardList} isRank={true} />}
-            {(productCardList.length > 5) && <ProductCardSlideList productList={productCardList} isRank={true} />}
+            {(productCardList.length <= 3) && <ProductCardList productList={productCardList} isRank={true} />}
+            {(productCardList.length > 3) && <ProductCardSlideList productList={productCardList} isRank={true} />}
+            {(!productCardList.length) && <div className={styles.un_box}><TextMediumShared className={"text-default-400"}>상품 후기가 3개 이하입니다.</TextMediumShared></div>}
         </div>
     );
 };
