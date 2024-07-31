@@ -3,9 +3,7 @@ import type { ProductType } from "@/(FSD)/shareds/types/product/Product.type";
 import { Skeleton } from "@nextui-org/skeleton";
 import styles from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
 import { useRouter } from "next/navigation";
-import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";
-import Link from "next/link";
 
 interface ProductCardType {
     product: ProductType;
