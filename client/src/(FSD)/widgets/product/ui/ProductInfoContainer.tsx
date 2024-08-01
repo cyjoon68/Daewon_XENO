@@ -5,7 +5,7 @@ import { useParams } from "next/navigation";
 import { useProductColorRead } from "../../../entities/product/api/useProductColorRead";
 import { ProductInfoType } from "@/(FSD)/shareds/types/product/ProductInfo.type";
 import ProductInfo from "@/(FSD)/widgets/product/ui/ProductInfo";
-import ProductImagesSlideList from "@/(FSD)/widgets/product/ui/ProductImagesSlideList";
+import ProductImageSlideList from "@/(FSD)/widgets/product/ui/ProductImageSlideList";
 import { useSetRecoilState } from "recoil";
 import { nameState } from "@/(FSD)/shareds/stores/ProductAtom";
 import ProductOtherColorImageList from "./ProductOtherColorImageList";
@@ -16,7 +16,7 @@ const ProductInfoContainer = () => {
     const { productColorId } = useParams<{ productColorId: string }>();
     const { data, isError, error, isPending, refetch } = useProductColorRead(+productColorId);
 
-    const setName = useSetRecoilState(nameState)
+    const setName = useSetRecoilState(nameState);
 
     const productInfo: ProductInfoType = data;
 
@@ -31,13 +31,10 @@ const ProductInfoContainer = () => {
 
     return (
         <>
-            <ProductImagesSlideList productImages={productInfo.productImages} />
+            <ProductImageSlideList productImageList={productInfo.productImages} />
             <ProductInfo product={productInfo} />
-
             {productInfo.booleanColor && (<ProductOtherColorImageList />)}
-            
             <ProductDetailImage productColorId={productColorId} />
-
             <ReviewInfoList productColorId={productColorId} />
         </>
     );
