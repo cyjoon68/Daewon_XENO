@@ -5,7 +5,7 @@ import React from "react";
 
 const Page = () => {
     return (
-        <AppSection>
+        <AppSection isBgColor>
             <ProductInfoContainer />
         </AppSection>
     );
