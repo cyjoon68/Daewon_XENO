@@ -28,7 +28,7 @@ const ProductDetailImage = ({ productColorId }: ProductDetailImageProps) => {
     if (isPending || !data) {
         return (
             <div className={style.product_detail_images_list}>
-                <div className={style.product_detail_slide_list}>
+                <div>
                     {[...Array(size)].map((_, index) => (
                         <ProductImageSkeleton key={index} />
                     ))}
@@ -75,7 +75,6 @@ const ProductDetailImage = ({ productColorId }: ProductDetailImageProps) => {
                     {isOpen ? "접기" : "더 보기"}
                 </Button>
             </div>
-            <div className={style.block} />
         </div>
     );
 };
