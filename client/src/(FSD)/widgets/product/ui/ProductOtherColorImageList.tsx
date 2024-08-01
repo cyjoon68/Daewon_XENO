@@ -59,7 +59,7 @@ const ProductOtherColorImageList = () => {
                     <h4 className={style.different_color_text}>다른 색상 상품도 있어요</h4>
                 </div>
 
-                {shouldEnableSlider ? (<div className={style.product_detail_slide_list}>
+                {shouldEnableSlider ? (<div>
                     <Slider {...sliderSettings}>
                         {productImages.map((p, index) => (
                             <div key={index} className={style.different_color_images} style={{ cursor: "pointer" }}>
@@ -87,8 +87,6 @@ const ProductOtherColorImageList = () => {
                     ))
                 )}
             </div>
-      
-            <div className={style.block} />
         </>
     );
 };

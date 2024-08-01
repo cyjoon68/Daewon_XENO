@@ -2,8 +2,9 @@ import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
 import { ProductType } from "@/(FSD)/shareds/types/product/Product.type";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
+import { ProdcutRankType } from "../type/ProdcutRank.type";
 
-export const useProductRankPantsPage = () => {
+export const useProductRankPageRead = ({ type = "상의" } : ProdcutRankType) => {
     const fetchData = useFetchData();
 
     const {
@@ -15,8 +16,8 @@ export const useProductRankPantsPage = () => {
         isPending,
         refetch
     } = useInfiniteQuery({
-        queryKey: ["product_rankl_pants_page"],
-        queryFn: ({ pageParam }) => fetchData({ path: `/product/rank/page/하의?pageIndex=${pageParam}&size=10`, isNotAuthRequired: true }),
+        queryKey: ["product_rank_page_read", type],
+        queryFn: ({ pageParam }) => fetchData({ path: `/product/rank/page/${type}?pageIndex=${pageParam}&size=10`, isNotAuthRequired: true }),
         getNextPageParam: (lastPage) => {
             if (lastPage.next) {
                 return lastPage.pageIndex + 1;
@@ -32,7 +33,7 @@ export const useProductRankPantsPage = () => {
     const productCardList: ProductType[] = useMemo(() => {
         const productCardList = data?.pages?.flatMap(page => page.dtoList) || [];
         return productCardList;
-    }, [data]);    
+    }, [data]);
 
     return { productCardList, isPending, isError, fetchNextPage, isFetchingNextPage, hasNextPage, refetch };
 };

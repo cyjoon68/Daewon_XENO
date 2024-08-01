@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import style from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
 import ProductImageSkeleton from "@/(FSD)/shareds/ui/ProductImageSkeleton";
 import { Button } from "@nextui-org/button";
-import { useProductColorDetailImageListRead } from "@/(FSD)/entities/product/api/useProductColorDetailImageListRead";
+import { useProductDetailImageListRead } from "@/(FSD)/entities/product/api/useProductDetailImageListRead";
 
 interface ProductDetailImageProps {
     productColorId: string;
@@ -15,7 +15,7 @@ const ProductDetailImage = ({ productColorId }: ProductDetailImageProps) => {
     const [size, setSize] = useState(2);
     const [isOpen, setIsOpen] = useState(false);
     const [loaded, setLoaded] = useState(false);
-    const { data, isError, error, isPending, refetch } = useProductColorDetailImageListRead(+productColorId, size);
+    const { data, isError, error, isPending, refetch } = useProductDetailImageListRead(+productColorId, size);
 
     useEffect(() => {
         refetch();
@@ -28,7 +28,7 @@ const ProductDetailImage = ({ productColorId }: ProductDetailImageProps) => {
     if (isPending || !data) {
         return (
             <div className={style.product_detail_images_list}>
-                <div className={style.product_detail_slide_list}>
+                <div>
                     {[...Array(size)].map((_, index) => (
                         <ProductImageSkeleton key={index} />
                     ))}
@@ -75,7 +75,6 @@ const ProductDetailImage = ({ productColorId }: ProductDetailImageProps) => {
                     {isOpen ? "접기" : "더 보기"}
                 </Button>
             </div>
-            <div className={style.block} />
         </div>
     );
 };
