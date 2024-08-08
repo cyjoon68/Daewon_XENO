@@ -18,14 +18,18 @@ const useAuthStatus = () => {
 
     useEffect(() => {
         if (isError) {
-            localStorage.removeItem("access_token");
-            localStorage.removeItem("refresh_token");
+            if (typeof window !== "undefined") {
+                localStorage.removeItem("access_token");
+                localStorage.removeItem("refresh_token");
+            }
         }
     }, [isError]);
 
     useEffect(() => {
-        refetch();
-    }, [localStorage.getItem("access_token")]);
+        if (typeof window !== "undefined" && localStorage.getItem("access_token") !== null) {
+            refetch();
+        }
+    }, [typeof window !== "undefined" && localStorage.getItem("access_token")]);
 
     return { data, isPending };
 };
