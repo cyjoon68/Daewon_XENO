@@ -3,11 +3,7 @@
 import { FetchType } from "../types/FetchData.type";
 
 const useFetchData = () => {
-    let accessToken = null;
-
-    if (typeof window !== "undefined") {
-        accessToken = localStorage.getItem("access_token");
-    };
+    const accessToken = localStorage.getItem("access_token");
 
     const fetchData = async ({ path, method = "GET", contentType = "application/json", isAuthRequired = false, isNotAuthRequired = false, body }: FetchType) => {
         let response = null;
