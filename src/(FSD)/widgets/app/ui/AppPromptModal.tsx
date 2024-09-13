@@ -7,18 +7,16 @@ import styles from "@/(FSD)/shareds/styles/AppStyle.module.scss";
 import AppInner from "./AppInner";
 import { Button, ButtonProps } from "@nextui-org/button";
 
+type ActionButtonType = ButtonProps & {
+    text?: string;
+    onAction?: () => void;
+};
+
 interface AppPromptModalProps extends AppModalType {
     children: ReactNode;
 
-    actionButtonProps?: ButtonProps & {
-        text?: string;
-        onAction?: () => void;
-    };
-
-    subButtonProps?: ButtonProps & {
-        text?: string;
-        onAction?: () => void;
-    };
+    actionButtonProps?: ActionButtonType;
+    subButtonProps?: ActionButtonType;
 };
 
 const AppPromptModal = ({ actionButtonProps, subButtonProps, children, isOpen, onOpenChange }: AppPromptModalProps) => {
