@@ -1,23 +1,40 @@
 @import "theme.scss";
 
+@mixin headerContent {
+    display: flex;
+    align-items: center;
+    gap: 3px;
+    position: absolute;
+}
+
 .header {
     height: 60px;
 
-    .inner {
-        height: 100%;
+    .header_inner {
+        position: relative;
         display: flex;
-        justify-content: space-between;
         align-items: center;
+        height: 100%;
 
-        .buttons {
-            display: flex;
+        .left_content {
+            @include headerContent;
+
+            left: 0;
+        }
+
+        .center_content {
+            @include headerContent;
+
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .right_content {
+            @include headerContent;
+
+            right: 0;
         }
     }
-}
-
-.title_header {
-    height: 60px;
-    display: block;
 }
 
 .nav {

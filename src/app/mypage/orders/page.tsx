@@ -2,14 +2,21 @@ import React from "react";
 import AppSection from "@/(FSD)/widgets/app/ui/AppSection";
 import AppInner from "@/(FSD)/widgets/app/ui/AppInner";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
-import AppTitleHeader from "@/(FSD)/widgets/app/ui/AppTitleHeader";
 import OrderInfoList from "@/(FSD)/widgets/order/ui/OrderInfoList";
+import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
+import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
+import BackBtnShared from "@/(FSD)/shareds/ui/BackBtnShared";
 
 const Page = () => {
     return (
         <>
             <AppFixedTopBar>
-                <AppTitleHeader title={"주문 목록"} />
+                <AppHeader
+                    leftContent={<>
+                        <BackBtnShared />
+                        <TextMediumShared fontWeight={"semibold"}>주문 내역</TextMediumShared>
+                    </>}
+                />
             </AppFixedTopBar>
             <AppSection>
                 <AppInner>

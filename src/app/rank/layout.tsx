@@ -1,14 +1,21 @@
+import BackBtnShared from "@/(FSD)/shareds/ui/BackBtnShared";
+import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import AppFixedBtmBar from "@/(FSD)/widgets/app/ui/AppFixedBtmBar";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
+import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
 import AppNav from "@/(FSD)/widgets/app/ui/AppNav";
-import AppTitleHeader from "@/(FSD)/widgets/app/ui/AppTitleHeader";
 import React from "react";
 
 const Layout = ({ children, }: { children: React.ReactNode }) => {
     return (
         <>
             <AppFixedTopBar>
-                <AppTitleHeader title={"상품 랭킹"} />
+                <AppHeader
+                    leftContent={<>
+                        <BackBtnShared />
+                        <TextMediumShared fontWeight={"semibold"}>상품 순위</TextMediumShared>
+                    </>}
+                />
             </AppFixedTopBar>
             {children}
             <AppFixedBtmBar>
