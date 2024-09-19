@@ -19,7 +19,7 @@
 
 ### Auth 페이지
 - react-hook-form, zod를 사용하여 form의 상태관리
-    - 유효한 정규식이 아닐 경우 빨간색으로 처리
+    - 유효한 정규식이 아닐 경우 에러 텍스트 출력
     - 모든 필수 input이 유효할 경우 submit 버튼 활성화
 - react-query useMutation를 사용하여 서버 상태관리
    - 회원 가입 페이지 Loading UI 구현
@@ -65,12 +65,10 @@
 ├─ 📂 apps
 │  └─ providers
 ├─ 📂 entities
-│  ├─ auth
 │  ├─ cart
 │  ├─ order
 │  ├─ product
 │  ├─ review
-│  ├─ seller
 │  └─ user
 ├─ 📂 features
 │  ├─ auth
@@ -80,18 +78,17 @@
 │  ├─ review
 │  └─ types
 ├─ 📂 shareds
-│  ├─ fetch
-│  ├─ hooks
+│  ├─ fetchs
+│  ├─ path
 │  ├─ stores
 │  ├─ styles
 │  ├─ types
 │  ├─ ui
-│  └─ utill
 └─ 📂 widgets
     ├─ app
     ├─ cart
     ├─ home
-    ├─ mypage
+    ├─ my
     ├─ order
     ├─ product
     └─ review
@@ -100,30 +97,39 @@
 ### app(page) 폴더 구조
 ```
 📦 app
-├─ 📂 (app)
-│  ├─ (main)
-│  ├─ cart
-│  ├─ complete
-│  ├─ menu
-│  ├─ mypage
-│  │  └─ orders
-│  ├─ order
-│  │  └─ delivery
-│  ├─ products
-│  │  └─ [productId]
-│  ├─ rank
-│  │  ├─ outer
-│  │  ├─ pants
-│  │  └─ top
-│  ├─ reviews
-│  │  ├─ create
-│  │  │  └─ [orderId]
-│  │  ├─ info
-│  │  │  └─ [reviewId]
-│  ├─ search
-│  │  └─ result
-│  └─ wishlist
-└─ 📂 auth
-   ├─ signin
-   └─ signup
+├─ 📂 (main)
+├─ 📂 auth
+│  ├─ signin
+│  └─ signup
+├─ 📂 cart
+├─ 📂 complete
+├─ 📂 menu
+├─ 📂 mypage
+│  ├─ claims
+│  └─ orders
+├─ 📂 order
+│  └─ delivery
+├─ 📂 products
+│  └─ [productId]
+├─ 📂 rank
+│  ├─ outer
+│  ├─ pants
+│  └─ top
+├─ 📂 reviews
+│  ├─ create
+│  │  └─ [orderId]
+│  └─ info
+│     └─ [reviewId]
+├─ 📂 search
+│  └─ result
+│     └─ [keyword]
+└─ 📂 wishlist
+```
+
+## 🔧 env 파일
+```js
+NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_SECRET_KEY = "Toss Client Key"
+NEXT_PUBLIC_TOSS_PAYMENTS_SECRET_KEY = "Toss Secret Key"
+NEXT_PUBLIC_TOSS_PAYMENTS_CUSTOMER_KEY_SECRET_KEY = "Toss Customer Id"
+NEXT_PUBLIC_API_URL = "API SERVER URL"
 ```
