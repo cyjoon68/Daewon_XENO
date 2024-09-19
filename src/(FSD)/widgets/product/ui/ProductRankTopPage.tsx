@@ -21,9 +21,7 @@ const ProductRankTopPage = () => {
     }, [inView]);
 
     if (isError) return <></>;
-    if (!productCardList) return <></>;
-
-
+    if (!productCardList || !productCardList.length) return <></>;
 
     return (
         <ProductCardList productList={productCardList} parentRefetch={refetch} lastCard={<div ref={ref} />} />

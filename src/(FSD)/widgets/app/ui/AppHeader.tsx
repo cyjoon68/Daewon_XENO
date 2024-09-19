@@ -1,23 +1,23 @@
 import React from "react";
-import styles from "@/(FSD)/shareds/styles/AppStyle.module.scss";
-import LogoShared from "@/(FSD)/shareds/ui/LogoShared";
-import IconShared from "@/(FSD)/shareds/ui/IconShared";
-import LinkBtnShared from "@/(FSD)/shareds/ui/LinkBtnShared";
-import AppInner from "./AppInner";
 import AppContainer from "./AppContainer";
-import ProductCart from "@/(FSD)/entities/product/ui/ProductCart";
+import AppInner from "./AppInner";
+import styles from "@/(FSD)/shareds/styles/AppStyle.module.scss";
 
-const AppHeader = () => {
+interface AppHeaderProps {
+    leftContent?: React.ReactNode;
+    rightContent?: React.ReactNode;
+    centerContent?: React.ReactNode;
+}
+
+const AppHeader = ({ leftContent, centerContent, rightContent } : AppHeaderProps) => {
     return (
         <header className={`border-default-100 border-b-small ${styles.header}`}>
             <AppContainer>
                 <AppInner>
-                    <div className={styles.inner}>
-                        <LogoShared />
-                        <div className={styles.buttons}>
-                            <LinkBtnShared href={"/search"} size={"sm"} isIconOnly endContent={<IconShared iconSize={"md"} iconType={"search"} />} />
-                            <ProductCart />
-                        </div>
+                    <div className={styles.header_inner}>
+                        {leftContent && <div className={styles.left_content}>{leftContent}</div>}
+                        {centerContent && <div className={styles.center_content}>{centerContent}</div>}
+                        {rightContent && <div className={styles.right_content}>{rightContent}</div>}
                     </div>
                 </AppInner>
             </AppContainer>

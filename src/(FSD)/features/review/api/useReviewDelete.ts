@@ -1,5 +1,5 @@
 import { MutationType } from "@/(FSD)/features/types/mutation.type";
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { useMutation } from "@tanstack/react-query"
 
 export const useReviewDelete = ({ onSuccess, onError }: MutationType) => {
