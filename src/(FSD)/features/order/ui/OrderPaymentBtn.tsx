@@ -9,6 +9,7 @@ import { useRecoilValue } from "recoil";
 import { useOrderProductPayments } from "../api/useOrderProductPayments";
 import { useOrderConfirmPayment } from "../api/useOrderConfirmPayment";
 import { useRouter } from "next/navigation";
+import { TOSS_PAYMENTS_CLIENT_KEY, TOSS_PAYMENTS_CUSTOMER_KEY_SECRET_KEY } from "@/(FSD)/shareds/paths/path";
 
 interface OrderPaymentBtnProps extends ButtonProps {
     orderProductInfoList: OrderProductInfoReadType[];
@@ -80,7 +81,7 @@ const OrderPaymentBtn = ({ orderProductInfoList }: OrderPaymentBtnProps) => {
     }
 
     const generateCustomerKey = (): string => {
-        const chars = process.env.NEXT_PUBLIC_TOSS_PAYMENTS_CUSTOMER_KEY_SECRET_KEY!;
+        const chars = TOSS_PAYMENTS_CUSTOMER_KEY_SECRET_KEY;
 
         let key = "";
 
@@ -112,7 +113,7 @@ const OrderPaymentBtn = ({ orderProductInfoList }: OrderPaymentBtnProps) => {
         console.log(orderProductReq);
         const customerKey = generateCustomerKey();
 
-        const tossPayments = await loadTossPayments(process.env.NEXT_PUBLIC_TOSS_PAYMENTS_CLIENT_SECRET_KEY!);
+        const tossPayments = await loadTossPayments(TOSS_PAYMENTS_CLIENT_KEY);
 
         const payment = tossPayments.payment({ customerKey: customerKey });
 
@@ -135,19 +136,15 @@ const OrderPaymentBtn = ({ orderProductInfoList }: OrderPaymentBtnProps) => {
 
         const processPayment = async (paymentRequest: CardPaymentRequest, totalPrice: number, orderId: string) => {
             try {
-                // 결제 요청 처리
                 const result = await payment.requestPayment(paymentRequest);
 
-                // 결제 요청 성공 시
                 if (result.amount.value === totalPrice && result.orderId === orderId) {
-                    // 결제 승인 요청
                     const confirmResult = await useOrderConfirmPayment({
                         amount: totalPrice,
                         orderId: orderId,
                         paymentKey: result.paymentKey
                     });
 
-                    // 결제 승인 성공 시
                     if (confirmResult.success) {
                         const orderProductPaymentsRequestList: OrderProductPaymentsRequest[] =
                             orderProductInfoList.map(orderProductInfo => ({

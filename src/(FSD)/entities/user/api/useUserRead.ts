@@ -1,12 +1,12 @@
 "use client";
 
-import { apiPath } from "@/(FSD)/shareds/fetch/APIpath";
+import { API_URL } from "@/(FSD)/shareds/paths/path";
 import { useQuery } from "@tanstack/react-query";
 
 const userReadFetch = async () => {
     const accessToken = localStorage.getItem("access_token")!;
 
-    const response = await fetch(`${apiPath}/api/user`, {
+    const response = await fetch(`${API_URL}/api/user`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
