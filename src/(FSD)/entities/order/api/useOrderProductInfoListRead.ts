@@ -1,4 +1,4 @@
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { ProductOptionType } from "@/(FSD)/shareds/types/product/ProductOption.type";
 import { useQuery } from "@tanstack/react-query";
 

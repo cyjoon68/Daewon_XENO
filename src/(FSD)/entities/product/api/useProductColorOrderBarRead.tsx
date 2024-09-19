@@ -1,4 +1,4 @@
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { keepPreviousData, useQuery } from "@tanstack/react-query";
 
 export const useProductColorOrderBarRead = (productId: number) => {

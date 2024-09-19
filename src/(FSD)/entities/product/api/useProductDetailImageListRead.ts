@@ -1,4 +1,4 @@
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { useQuery } from "@tanstack/react-query";
 
 export const useProductDetailImageListRead = (productId: number, size: number) => {

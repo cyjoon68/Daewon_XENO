@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { MutationType } from "../../types/mutation.type";
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { OrderProductPaymentsRequest } from "@/(FSD)/shareds/types/orders/OrderProductPaymentsRequest.type";
 
 export const useOrderComplete = ({ onSuccess, onError }: MutationType) => {

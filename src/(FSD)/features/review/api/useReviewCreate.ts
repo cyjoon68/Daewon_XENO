@@ -1,11 +1,11 @@
 import { useMutation } from "@tanstack/react-query";
 import { MutationType } from "../../types/mutation.type";
-import { apiPath } from "@/(FSD)/shareds/fetch/APIpath";
+import { API_URL } from "@/(FSD)/shareds/path";
 
 const reviewCreateFetch = async (data: FormData) => {
     const accessToken = localStorage.getItem("access_token");
 
-    const response = await fetch(`${apiPath}/api/review/create`, {
+    const response = await fetch(`${API_URL}/api/review/create`, {
         method: "POST",
         headers: {
             Authorization: `Bearer ${accessToken}`,
