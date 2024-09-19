@@ -1,4 +1,3 @@
-import CartProductBtn from "@/(FSD)/entities/cart/ui/CartProductBtn";
 import BackBtnShared from "@/(FSD)/shareds/ui/BackBtnShared";
 import IconBtnShared from "@/(FSD)/shareds/ui/IconBtnShared";
 import AppFixedBtmBar from "@/(FSD)/widgets/app/ui/AppFixedBtmBar";
@@ -11,11 +10,11 @@ const Layout = ({ children, }: { children: React.ReactNode }) => {
         <>
             <AppFixedTopBar>
                 <AppHeader
+                    defaultCartButton
                     leftContent={<BackBtnShared />}
                     rightContent={<>
                         <IconBtnShared href={"/"} iconProps={{ iconType: "home" }} />
                         <IconBtnShared href={"/"} iconProps={{ iconType: "search" }} />
-                        <CartProductBtn />
                     </>}
                 />
             </AppFixedTopBar>

@@ -9,9 +9,7 @@ const Page = () => {
     return (
         <>
             <AppFixedTopBar>
-                <AppHeader
-                    leftContent={<TextMediumShared fontWeight={"semibold"}>마이</TextMediumShared>}
-                />
+                <AppHeader defaultCartButton leftContent={<TextMediumShared fontWeight={"semibold"}>마이</TextMediumShared>} />
             </AppFixedTopBar>
             <AppSection>
                 <MyPageInfoContainer />
