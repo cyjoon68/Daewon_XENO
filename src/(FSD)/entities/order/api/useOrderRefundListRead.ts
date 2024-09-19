@@ -1,4 +1,4 @@
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { OrderInfoType } from "@/(FSD)/shareds/types/orders/OrderInfo.Type";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useMemo } from "react";

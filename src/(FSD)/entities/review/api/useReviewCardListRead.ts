@@ -1,5 +1,5 @@
 
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { ReviewCardType } from "@/(FSD)/shareds/types/review/ReviewCard.type";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { useMemo } from "react";

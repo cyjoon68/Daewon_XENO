@@ -1,7 +1,7 @@
 "use client";
 
+import { API_URL } from "../path";
 import { FetchType } from "../types/FetchData.type";
-import { apiPath } from "./APIpath";
 
 const useFetchData = () => {
     let accessToken = null;
@@ -14,7 +14,7 @@ const useFetchData = () => {
         let response = null;
         
         if ((!isNotAuthRequired) || (isAuthRequired)) {
-            response = await fetch(`${apiPath}/api${path}`, {
+            response = await fetch(`${API_URL}/api${path}`, {
                 method: method,
                 headers: {
                     "Content-Type": contentType,
@@ -23,7 +23,7 @@ const useFetchData = () => {
                 body: JSON.stringify(body)
             });
         } else {
-            response = await fetch(`${apiPath}${path}`, {
+            response = await fetch(`${API_URL}${path}`, {
                 method: method,
                 headers: {
                     "Content-Type": contentType,

@@ -1,13 +1,23 @@
+import CartProductBtn from "@/(FSD)/entities/cart/ui/CartProductBtn";
+import BackBtnShared from "@/(FSD)/shareds/ui/BackBtnShared";
+import IconBtnShared from "@/(FSD)/shareds/ui/IconBtnShared";
 import AppFixedBtmBar from "@/(FSD)/widgets/app/ui/AppFixedBtmBar";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
-import ProductHeader from "@/(FSD)/widgets/product/ui/ProductHeader";
+import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
 import ProductOrderBar from "@/(FSD)/widgets/product/ui/ProductOrderBar";
 
 const Layout = ({ children, }: { children: React.ReactNode }) => {
     return (
         <>
             <AppFixedTopBar>
-                <ProductHeader />
+                <AppHeader
+                    leftContent={<BackBtnShared />}
+                    rightContent={<>
+                        <IconBtnShared href={"/"} iconProps={{ iconType: "home" }} />
+                        <IconBtnShared href={"/"} iconProps={{ iconType: "search" }} />
+                        <CartProductBtn />
+                    </>}
+                />
             </AppFixedTopBar>
             {children}
             <AppFixedBtmBar>

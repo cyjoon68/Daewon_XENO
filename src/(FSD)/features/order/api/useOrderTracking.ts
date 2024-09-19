@@ -23,11 +23,11 @@ export interface TrackingStatus {
     carrierId: string,
     trackingNumber: string,
   ): Promise<TrackResponse> {
-    const response = await fetch('https://apis.tracker.delivery/graphql', {
-      method: 'POST',
+    const response = await fetch("https://apis.tracker.delivery/graphql", {
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `TRACKQL-API-KEY 97vetlqkkgltulpe7tmfq9pr2:3ii271qrmmir9pvnsj23s34cvv2l3nokhhn9desbbtkb08cqjoi`,
+        "Content-Type": "application/json",
+        "Authorization": `TRACKQL-API-KEY 97vetlqkkgltulpe7tmfq9pr2:3ii271qrmmir9pvnsj23s34cvv2l3nokhhn9desbbtkb08cqjoi`,
       },
       body: JSON.stringify({
         query: `
@@ -64,7 +64,7 @@ export interface TrackingStatus {
     });
   
     if (!response.ok) {
-      throw new Error('Network response was not ok');
+      throw new Error("Network response was not ok");
     }
   
     return response.json();

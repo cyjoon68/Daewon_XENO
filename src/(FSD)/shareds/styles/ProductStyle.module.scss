@@ -1,25 +1,5 @@
 @import "theme.scss";
 
-.product_header {
-    display: block;
-    height: 60px;
-
-    .header_inner {
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: space-between;
-
-        .back_btn {
-            display: block;
-        }
-
-        .left_btns {
-            display: block;
-        }
-    }
-}
-
 .block {
     display: block;
 }
