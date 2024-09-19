@@ -26,7 +26,7 @@ const ProductCardList = ({ productList, column = 3, isRank = false, lastCard, is
         "column_three": column === 3,
     });
 
-    if (!productList) return <></>;
+    if (!productList || !productList[0]) return <></>;
 
     return (
         <div className={`${styles.product_card_list} ${productCardListClassNames}`}>

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useOrderCancle } from '@/(FSD)/features/order/api/useOrderCancle';
-import { Button } from '@nextui-org/button';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from '@nextui-org/modal';
-import React, { useState } from 'react';
-import { useOrderRefund } from '../api/useOrderRefund';
+import { useOrderCancle } from "@/(FSD)/features/order/api/useOrderCancle";
+import { Button } from "@nextui-org/button";
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/modal";
+import React, { useState } from "react";
+import { useOrderRefund } from "../api/useOrderRefund";
 
 interface CancelModalProps {
     orderId: number;
@@ -17,13 +17,13 @@ const OrderRefundRequestModal = ({
     isOpen,
     onOpenChange,
 }: CancelModalProps) => {
-    const [reason, setReason] = useState('');
+    const [reason, setReason] = useState("");
     const [isSubmitting, setIsSubmitting] = useState(false);
 
 
     const onSuccess = (data: any) => {
         // 성공적으로 처리된 후 실행할 로직을 여기에 추가
-        console.log('Order cancelled successfully:', data);
+        console.log("Order cancelled successfully:", data);
         window.location.reload(); // 페이지 새로 고침
         onOpenChange(false); // 모달 닫기
     };
@@ -42,7 +42,7 @@ const OrderRefundRequestModal = ({
             // 요청 본문에 JSON 형태로 데이터를 포함
             await mutate(requestData);
         } catch (error) {
-            console.error('Failed to cancel order:', error);
+            console.error("Failed to cancel order:", error);
             // 오류 처리 로직 추가
         } finally {
             setIsSubmitting(false); // 제출 완료 상태로 복구
@@ -70,12 +70,12 @@ const OrderRefundRequestModal = ({
                         </ModalBody>
                         <ModalFooter>
                             <Button
-                                type='submit'
+                                type="submit"
                                 color="primary" variant="light"
                                 onClick={onSubmit}
                                 disabled={isSubmitting} // 제출 중일 때 버튼 비활성화
                             >
-                                {isSubmitting ? '신청 중...' : '환불 신청하기'}
+                                {isSubmitting ? "신청 중..." : "환불 신청하기"}
                             </Button>
                             <Button color="danger" variant="light" onClick={onClose}>
                                 닫기

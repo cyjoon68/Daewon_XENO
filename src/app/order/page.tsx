@@ -5,13 +5,20 @@ import OrderDeliveryContainer from "@/(FSD)/widgets/order/ui/OrderDeliveryContai
 import AppFixedBtmBar from "@/(FSD)/widgets/app/ui/AppFixedBtmBar";
 import OrderBtnBar from "@/(FSD)/widgets/order/ui/OrderBtnBar";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
-import AppTitleHeader from "@/(FSD)/widgets/app/ui/AppTitleHeader";
+import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
+import BackBtnShared from "@/(FSD)/shareds/ui/BackBtnShared";
+import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 
 const Page = () => {
     return (
         <>
             <AppFixedTopBar>
-                <AppTitleHeader title={"결제하기"} />
+                <AppHeader
+                    leftContent={<>
+                        <BackBtnShared />
+                        <TextMediumShared fontWeight={"semibold"}>결제하기</TextMediumShared>
+                    </>}
+                />
             </AppFixedTopBar>
             <AppSection isBgColor={true}>
                 <OrderDeliveryContainer />

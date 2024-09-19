@@ -1,4 +1,4 @@
-import useFetchData from "@/(FSD)/shareds/fetch/useFetchData";
+import useFetchData from "@/(FSD)/shareds/fetchs/useFetchData";
 import { ProductType } from "@/(FSD)/shareds/types/product/Product.type";
 import { keepPreviousData, useInfiniteQuery } from "@tanstack/react-query";
 import { useMemo } from "react";
