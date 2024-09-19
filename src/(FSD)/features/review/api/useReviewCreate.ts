@@ -1,6 +1,6 @@
 import { useMutation } from "@tanstack/react-query";
 import { MutationType } from "../../types/mutation.type";
-import { API_URL } from "@/(FSD)/shareds/paths/path";
+import { API_URL } from "@/(FSD)/shareds/path";
 
 const reviewCreateFetch = async (data: FormData) => {
     const accessToken = localStorage.getItem("access_token");

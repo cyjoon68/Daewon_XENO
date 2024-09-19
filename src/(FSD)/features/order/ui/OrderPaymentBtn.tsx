@@ -9,7 +9,7 @@ import { useRecoilValue } from "recoil";
 import { useOrderProductPayments } from "../api/useOrderProductPayments";
 import { useOrderConfirmPayment } from "../api/useOrderConfirmPayment";
 import { useRouter } from "next/navigation";
-import { TOSS_PAYMENTS_CLIENT_KEY, TOSS_PAYMENTS_CUSTOMER_KEY_SECRET_KEY } from "@/(FSD)/shareds/paths/path";
+import { TOSS_PAYMENTS_CLIENT_KEY, TOSS_PAYMENTS_CUSTOMER_KEY_SECRET_KEY } from "@/(FSD)/shareds/path";
 
 interface OrderPaymentBtnProps extends ButtonProps {
     orderProductInfoList: OrderProductInfoReadType[];

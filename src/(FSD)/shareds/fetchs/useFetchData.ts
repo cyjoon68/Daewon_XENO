@@ -1,6 +1,6 @@
 "use client";
 
-import { API_URL } from "../paths/path";
+import { API_URL } from "../path";
 import { FetchType } from "../types/FetchData.type";
 
 const useFetchData = () => {

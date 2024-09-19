@@ -1,6 +1,6 @@
 "use client";
 
-import { API_URL } from "@/(FSD)/shareds/paths/path";
+import { API_URL } from "@/(FSD)/shareds/path";
 import { useQuery } from "@tanstack/react-query";
 
 const userReadFetch = async () => {
