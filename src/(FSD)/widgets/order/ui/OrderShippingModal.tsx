@@ -1,9 +1,9 @@
-'use client'
+"use client"
 
-import { fetchTrackingData } from '@/(FSD)/features/order/api/useOrderTracking';
-import { Button } from '@nextui-org/button';
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from '@nextui-org/modal';
-import React, { useEffect, useState } from 'react';
+import { fetchTrackingData } from "@/(FSD)/features/order/api/useOrderTracking";
+import { Button } from "@nextui-org/button";
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/modal";
+import React, { useEffect, useState } from "react";
 
 interface ShippingModalProps {
     trackingNumber: string;
@@ -35,7 +35,7 @@ const OrderShippingModal = ({
                     );
                     setData(result);
                 } catch (err) {
-                    setError('Failed to fetch tracking data');
+                    setError("Failed to fetch tracking data");
                 } finally {
                     setLoading(false);
                 }
@@ -50,9 +50,9 @@ const OrderShippingModal = ({
     const events = track?.events?.edges || [];
     const lastEvent = track?.lastEvent;
 
-    console.log('Track:', track); // track 데이터 확인
-    console.log('Events:', events); // events 데이터 확인
-    console.log('Last Event:', lastEvent); // lastEvent 데이터 확인
+    console.log("Track:", track); // track 데이터 확인
+    console.log("Events:", events); // events 데이터 확인
+    console.log("Last Event:", lastEvent); // lastEvent 데이터 확인
 
     return (
         <Modal isOpen={isOpen} onOpenChange={onOpenChange}>
@@ -69,7 +69,7 @@ const OrderShippingModal = ({
                                         // 마지막 이벤트를 결정
                                         const isLastEvent = index === events.length - 1;
                                         // 이벤트 수에 따라 스타일을 다르게 적용
-                                        const textColorClass = events.length > 1 && !isLastEvent ? 'text-gray-500' : 'text-black';
+                                        const textColorClass = events.length > 1 && !isLastEvent ? "text-gray-500" : "text-black";
                                         return (
                                             <div
                                                 key={index}

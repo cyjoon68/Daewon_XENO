@@ -28,16 +28,16 @@ interface PaymentRequest {
     customerEmail?: string;
     customerMobilePhone?: string;
     taxFreeAmount?: number;
-    windowTarget?: 'iframe' | 'self';
+    windowTarget?: "iframe" | "self";
     metadata?: Record<string | symbol | number, unknown> | null;
 }
 
 interface CardPaymentRequest extends PaymentRequest {
-    method: 'CARD';
+    method: "CARD";
     card?: {
         useEscrow?: boolean;
         taxExemptionAmount?: number;
-        flowMode?: 'DIRECT' | 'DEFAULT';
+        flowMode?: "DIRECT" | "DEFAULT";
         cardCompany?: string;
         easyPay?: string;
         cardInstallmentPlan?: number;
@@ -159,13 +159,13 @@ const OrderPaymentBtn = ({ orderProductInfoList }: OrderPaymentBtnProps) => {
 
                         mutate(orderProductPaymentsRequestList);
                     } else {
-                        console.error('결제 승인 실패:', confirmResult.message);
+                        console.error("결제 승인 실패:", confirmResult.message);
                     }
                 } else {
-                    console.error('결제 요청 결과가 예상과 다릅니다.');
+                    console.error("결제 요청 결과가 예상과 다릅니다.");
                 }
             } catch (error) {
-                console.error('결제 처리 오류:', error);
+                console.error("결제 처리 오류:", error);
             }
         };
         processPayment(paymentRequest, totalPrice, orderId);

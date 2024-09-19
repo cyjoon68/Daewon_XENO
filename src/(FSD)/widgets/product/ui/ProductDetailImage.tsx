@@ -36,7 +36,7 @@ const ProductDetailImage = ({ productDetailImage }: ProductDetailImageProps) => 
                     <div className={style.image_block} >
                         <img
                             src={productDetailImage}
-                            alt={'상세이미지'}
+                            alt={"상세이미지"}
                             className={style.detail_image}
                         />
                     </div>
