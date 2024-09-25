@@ -18,6 +18,7 @@ import { useDisclosure } from "@nextui-org/modal";
 import AppLoadingModal from "@/(FSD)/widgets/app/ui/AppLoadingModal";
 import AppAlertModal from "@/(FSD)/widgets/app/ui/AppAlertModal";
 import TextLargeShared from "@/(FSD)/shareds/ui/TextLargeShared";
+import { useQueryClient } from "@tanstack/react-query";
 
 const AuthSignupForm = () => {
     const userNameRegex = /^[가-힣a-zA-Z\s]{1,20}$/;
@@ -52,9 +53,14 @@ const AuthSignupForm = () => {
 
     const router = useRouter();
 
+    const queryClient = useQueryClient();
+
     const onSuccess = (data: any) => {
         if (!userData) return;
-        router.push("/");
+
+        queryClient.refetchQueries({ queryKey: ["user_read"] });
+
+        router.push("/auth/signin");
     }
 
     const { mutate, isError, isPending } = useAuthSignup({ onSuccess });

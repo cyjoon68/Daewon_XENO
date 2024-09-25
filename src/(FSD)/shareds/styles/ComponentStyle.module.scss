@@ -142,3 +142,13 @@ $form_height: 58px;
         word-wrap: break-word;
     }
 }
+
+.menu_button {
+    padding: 5px 0;
+    
+    .button_inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
