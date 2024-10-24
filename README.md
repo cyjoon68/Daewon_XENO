@@ -3,6 +3,8 @@
 ## 📖 설명
 더조은컴퓨터 학원 팀 프로젝트 남자 패션 쇼핑몰 XENO입니다.
 
+<a href="https://github.com/cyjoon68/Daewon_XENO/wiki/%08XENO_view">이미지 바로가기</a>
+
 ## 🧑‍💻 팀원 소개
 <table>
     <tbody>
