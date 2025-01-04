@@ -1,0 +1,17 @@
+{
+    "appId": "com.example.app",
+    "directories": {
+        "output": "dist"
+    },
+    "files": [
+        "build/**/*",
+        "main/**/*"
+    ],
+    "extraMetadata": {
+        "main": "main/background.ts"
+    },
+    "mac": {
+        "target": "dmg",
+        "category": "public.app-category.utilities"
+    }
+}
