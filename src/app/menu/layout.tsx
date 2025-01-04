@@ -1,4 +1,3 @@
-import CartProductBtn from "@/(FSD)/entities/cart/ui/CartProductBtn";
 import BackBtnShared from "@/(FSD)/shareds/ui/BackBtnShared";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import AppFixedBtmBar from "@/(FSD)/widgets/app/ui/AppFixedBtmBar";
@@ -11,13 +10,7 @@ const Layout = ({ children, }: { children: React.ReactNode }) => {
     return (
         <>
             <AppFixedTopBar>
-                <AppHeader
-                    leftContent={<>
-                        <BackBtnShared />
-                        <TextMediumShared fontWeight={"semibold"}>메뉴</TextMediumShared>
-                    </>}
-                    rightContent={<CartProductBtn />}
-                />
+                <AppHeader defaultCartButton leftContent={<TextMediumShared fontWeight={"semibold"}>메뉴</TextMediumShared>} />
             </AppFixedTopBar>
             {children}
             <AppFixedBtmBar>
