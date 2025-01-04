@@ -1,4 +1,3 @@
-import CartProductBtn from "@/(FSD)/entities/cart/ui/CartProductBtn";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
 import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
@@ -11,10 +10,7 @@ const Page = () => {
     return (
         <>
             <AppFixedTopBar>
-                <AppHeader
-                    leftContent={<TextMediumShared fontWeight={"semibold"}>리뷰</TextMediumShared>}
-                    rightContent={<CartProductBtn />}
-                />
+                <AppHeader defaultCartButton leftContent={<TextMediumShared fontWeight={"semibold"}>리뷰</TextMediumShared>} />
             </AppFixedTopBar>
             <AppSection>
                 <AppInner>

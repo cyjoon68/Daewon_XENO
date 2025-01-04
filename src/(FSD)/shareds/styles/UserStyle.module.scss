@@ -1,0 +1,18 @@
+.user_profile_box {
+    display: block;
+    
+    div[data-slot="container"] {
+        padding: 20px 0;
+    }
+
+    .box_inner {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .profile_text {
+            display: block;
+        }
+    }
+}

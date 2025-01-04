@@ -11,6 +11,7 @@ const Layout = ({ children, }: { children: React.ReactNode }) => {
         <>
             <AppFixedTopBar>
                 <AppHeader
+                    defaultCartButton
                     leftContent={<>
                         <BackBtnShared />
                         <TextMediumShared fontWeight={"semibold"}>상품 순위</TextMediumShared>

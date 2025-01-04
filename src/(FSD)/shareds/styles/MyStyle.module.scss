@@ -1,0 +1,25 @@
+.my_container {
+    display: block;
+
+    .unaccount_box {
+        div[data-slot="container"] {
+            padding: 20px 0;
+        }
+
+        .box_inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    }
+
+    .menu_list {
+        display: block;
+        margin-top: 10px;
+
+        div[data-slot="container"] {
+            padding-top: 10px;
+            padding-bottom: 20px;
+        }
+    }
+}
