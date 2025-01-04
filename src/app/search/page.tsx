@@ -7,7 +7,6 @@ import AppHeader from "@/(FSD)/widgets/app/ui/AppHeader";
 import BackBtnShared from "@/(FSD)/shareds/ui/BackBtnShared";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import AppFixedTopBar from "@/(FSD)/widgets/app/ui/AppFixedTopBar";
-import CartProductBtn from "@/(FSD)/entities/cart/ui/CartProductBtn";
 
 export const metadata: Metadata = {
     title: "XENO - 키워드 검색",
@@ -18,11 +17,11 @@ const Page = () => {
         <>
             <AppFixedTopBar>
                 <AppHeader
+                    defaultCartButton
                     leftContent={<>
                         <BackBtnShared />
                         <TextMediumShared fontWeight={"semibold"}>검색하기</TextMediumShared>
                     </>}
-                    rightContent={<CartProductBtn />}
                 />
             </AppFixedTopBar>
             <AppSection>

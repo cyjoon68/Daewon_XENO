@@ -19,6 +19,7 @@ import TextXSmallShared from "@/(FSD)/shareds/ui/TextXSmallShared";
 import AppLoadingModal from "@/(FSD)/widgets/app/ui/AppLoadingModal";
 import AppAlertModal from "@/(FSD)/widgets/app/ui/AppAlertModal";
 import TextLargeShared from "@/(FSD)/shareds/ui/TextLargeShared";
+import { useQueryClient } from "@tanstack/react-query";
 
 const AuthSigninForm = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -42,10 +43,15 @@ const AuthSigninForm = () => {
 
     const router = useRouter();
 
+    const queryClient = useQueryClient();
+
     const onSuccess = (data: any) => {
         if (!userData) return;
 
+        queryClient.refetchQueries({ queryKey: ["user_read"] });
+
         localStorage.setItem("access_token", data.accessToken);
+
 
         router.push("/");
     }
