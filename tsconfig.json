@@ -39,7 +39,7 @@
         "**/*.ts",
         "**/*.tsx",
         ".next/types/**/*.ts"
-    ],
+, "main/background.js"    ],
     "exclude": [
         "node_modules"
     ]
