@@ -2,6 +2,7 @@
     "name": "XENO-client",
     "version": "0.1.0",
     "private": true,
+    "main": "main/background.js",
     "scripts": {
         "dev": "next dev",
         "build": "next build",
