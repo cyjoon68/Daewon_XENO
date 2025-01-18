@@ -5,17 +5,17 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import FormInputShared from "@/(FSD)/shareds/ui/FormInputShared";
 import PasswordInputShared from "@/(FSD)/shareds/ui/PasswordInputShared";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import { z } from "zod";
 import { useRouter } from "next/navigation";
 import styles from "@/(FSD)/shareds/styles/AuthStyle.module.scss";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import Link from "next/link";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";
-import { useDisclosure } from "@nextui-org/modal";
+import { useDisclosure } from "@heroui/modal";
 import AppAlertModal from "@/(FSD)/widgets/app/ui/AppAlertModal";
 import TextLargeShared from "@/(FSD)/shareds/ui/TextLargeShared";
-import { authSignupAction } from "../api/authSignupAction";
+import { authSignupAction } from "../model/authSignupAction";
 import type { AuthUserType } from "../type/AuthUser.type";
 
 const AuthSignupForm = () => {
