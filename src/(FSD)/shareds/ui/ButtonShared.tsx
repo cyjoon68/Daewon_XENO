@@ -4,7 +4,7 @@ import { ButtonSharedType } from "../types/ButtonShared.type";
 
 const ButtonShared = ({ children, disableHover, ...props }: ButtonSharedType) => {
     return (
-        <Button data-hover={disableHover} {...props}>{children}</Button>
+        <Button data-hover={!disableHover} {...props}>{children}</Button>
     );
 };
 
