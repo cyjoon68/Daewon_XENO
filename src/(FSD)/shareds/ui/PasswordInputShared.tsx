@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Controller } from "react-hook-form";
-import { Input } from "@nextui-org/input";
+import { Input } from "@heroui/input";
 import IconShared from "./IconShared";
 
 const PasswordInputShared = ({ name, control, onChange, children, ...props }: any) => {

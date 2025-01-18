@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from "@nextui-org/button";
+import { Button, ButtonProps } from "@heroui/button";
 import React, { ReactNode, useEffect, useRef, useState } from "react";
 import styles from "@/(FSD)/shareds/styles/ComponentStyle.module.scss";
 import Image from "next/image";

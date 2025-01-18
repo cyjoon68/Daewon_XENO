@@ -2,10 +2,10 @@
 
 import React, { ReactNode } from "react";
 import { AppModalType } from "../types/AppModal.type";
-import { Modal, ModalContent } from "@nextui-org/modal";
+import { Modal, ModalContent } from "@heroui/modal";
 import styles from "@/(FSD)/shareds/styles/AppStyle.module.scss";
 import AppInner from "./AppInner";
-import { Button, ButtonProps } from "@nextui-org/button";
+import { Button, ButtonProps } from "@heroui/button";
 
 type ActionButtonType = ButtonProps & {
     text?: string;

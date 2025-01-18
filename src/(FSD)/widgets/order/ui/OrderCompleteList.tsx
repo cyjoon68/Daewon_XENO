@@ -7,7 +7,7 @@ import { useRouter } from "next/navigation";
 import OrderProductInfo from "@/(FSD)/entities/order/ui/OrderProductInfo";
 import TextLargeShared from "@/(FSD)/shareds/ui/TextLargeShared";
 import styles from "@/(FSD)/shareds/styles/OrderStyle.module.scss";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import IconShared from "@/(FSD)/shareds/ui/IconShared";
 import AppInner from "../../app/ui/AppInner";
 import { OrderProductInfoType } from "@/(FSD)/shareds/types/orders/OrderProductInfotype";

@@ -1,7 +1,7 @@
 "use client";
 
 import IconShared from "@/(FSD)/shareds/ui/IconShared";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import React from "react";
 import styles from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";

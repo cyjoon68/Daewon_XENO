@@ -1,5 +1,5 @@
 import React from "react";
-import { Checkbox } from "@nextui-org/checkbox";
+import { Checkbox } from "@heroui/checkbox";
 import { useSetRecoilState } from "recoil";
 import { CartListState } from "@/(FSD)/shareds/stores/CartAtom";
 

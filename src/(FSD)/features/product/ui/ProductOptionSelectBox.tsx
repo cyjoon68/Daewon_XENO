@@ -2,7 +2,7 @@
 
 import { ProductOptionListState } from "@/(FSD)/shareds/stores/ProductDetailAtom";
 import { ProductOptionType } from "@/(FSD)/shareds/types/product/ProductOption.type";
-import { Select, SelectItem } from "@nextui-org/select";
+import { Select, SelectItem } from "@heroui/select";
 import React from "react";
 import { useSetRecoilState } from "recoil";
 

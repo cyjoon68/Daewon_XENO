@@ -1,5 +1,5 @@
 import React, { ReactNode } from "react";
-import { Skeleton } from "@nextui-org/skeleton";
+import { Skeleton } from "@heroui/skeleton";
 import styles from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
 import { useRouter } from "next/navigation";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";

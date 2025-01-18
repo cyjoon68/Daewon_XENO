@@ -1,8 +1,8 @@
 "use client"
 
 import { fetchTrackingData } from "@/(FSD)/features/order/api/useOrderTracking";
-import { Button } from "@nextui-org/button";
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@nextui-org/modal";
+import { Button } from "@heroui/button";
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, useDisclosure } from "@heroui/modal";
 import React, { useEffect, useState } from "react";
 
 interface ShippingModalProps {

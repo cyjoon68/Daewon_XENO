@@ -1,7 +1,7 @@
 "use client";
 
 import { OrderProductReqState } from "@/(FSD)/shareds/stores/OrderProductAtom";
-import { Textarea } from "@nextui-org/input";
+import { Textarea } from "@heroui/input";
 import React from "react";
 import { useSetRecoilState } from "recoil";
 

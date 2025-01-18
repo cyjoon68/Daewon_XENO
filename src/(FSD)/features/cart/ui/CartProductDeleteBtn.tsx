@@ -1,7 +1,7 @@
 "use client";
 
 import IconBtnShared from "@/(FSD)/shareds/ui/IconBtnShared";
-import { ButtonProps } from "@nextui-org/button";
+import { ButtonProps } from "@heroui/button";
 import React from "react";
 import { useCartListDelete } from "../api/useCartListDelete";
 import { useQueryClient } from "@tanstack/react-query";

@@ -1,4 +1,4 @@
-import { Button, ButtonProps } from "@nextui-org/button";
+import { Button, ButtonProps } from "@heroui/button";
 import React from "react";
 import IconShared from "./IconShared";
 import { IconType } from "../types/Icon.type";

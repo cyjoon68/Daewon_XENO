@@ -3,7 +3,7 @@
 import { OrderProductReqState } from "@/(FSD)/shareds/stores/OrderProductAtom";
 import { OrderProductInfoReadType } from "@/(FSD)/shareds/types/orders/OrderProductInfoRead.type";
 import { OrderProductPaymentsRequest } from "@/(FSD)/shareds/types/orders/OrderProductPaymentsRequest.type";
-import { Button, ButtonProps } from "@nextui-org/button";
+import { Button, ButtonProps } from "@heroui/button";
 import { loadTossPayments } from "@tosspayments/tosspayments-sdk";
 import { useRecoilValue } from "recoil";
 import { useOrderProductPayments } from "../api/useOrderProductPayments";

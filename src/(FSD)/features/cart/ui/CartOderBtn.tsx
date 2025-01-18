@@ -3,7 +3,7 @@
 import { CartListState } from "@/(FSD)/shareds/stores/CartAtom";
 import { OrderProductOptionRequestListState } from "@/(FSD)/shareds/stores/OrderProductAtom";
 import { ProductOptionType } from "@/(FSD)/shareds/types/product/ProductOption.type";
-import { Button, ButtonProps } from "@nextui-org/button";
+import { Button, ButtonProps } from "@heroui/button";
 import { useRouter } from "next/navigation";
 import React from "react";
 import { useRecoilValue, useSetRecoilState } from "recoil";

@@ -2,7 +2,7 @@
 
 import React from "react";
 import styles from "@/(FSD)/shareds/styles/MenuStyle.module.scss";
-import { Chip } from "@nextui-org/chip";
+import { Chip } from "@heroui/chip";
 import { useRecoilState } from "recoil";
 import { categoryIdState, categorySubIdState } from "@/(FSD)/shareds/stores/CategoryAtom";
 import { categories } from "../consts/categories";

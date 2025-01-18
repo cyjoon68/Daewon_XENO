@@ -4,7 +4,7 @@ import React, { useEffect, useReducer } from "react";
 import { useRouter } from "next/navigation";
 import TextLargeShared from "@/(FSD)/shareds/ui/TextLargeShared";
 import styles from "@/(FSD)/shareds/styles/OrderStyle.module.scss";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import IconShared from "@/(FSD)/shareds/ui/IconShared";
 import AppInner from "../../app/ui/AppInner";
 import { useRecoilValue, useSetRecoilState } from "recoil";

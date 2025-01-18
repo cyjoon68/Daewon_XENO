@@ -1,14 +1,15 @@
 import React from "react";
-import { Button, ButtonProps } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import Link from "next/link";
+import { ButtonSharedType } from "../types/ButtonShared.type";
 
-interface LinkBtnSharedProps extends ButtonProps {
+interface LinkBtnSharedProps extends ButtonSharedType {
     href: string;
 };
 
-const LinkBtnShared = ({ href, children, variant, ...props } : LinkBtnSharedProps) => {
+const LinkBtnShared = ({ href, children, variant, disableHover, ...props } : LinkBtnSharedProps) => {
     return (
-        <Button variant={variant || "light"} data-slot={"link"} href={href} as={Link} {...props}>{ children }</Button>
+        <Button data-hover={disableHover} variant={variant || "light"} data-slot={"link"} href={href} as={Link} {...props}>{ children }</Button>
     );
 };
 

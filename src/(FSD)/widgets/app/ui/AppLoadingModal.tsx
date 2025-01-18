@@ -1,10 +1,10 @@
 "use client";
 
-import { Modal, ModalBody, ModalContent } from "@nextui-org/modal";
+import { Modal, ModalBody, ModalContent } from "@heroui/modal";
 import React from "react";
 import styles from "@/(FSD)/shareds/styles/AppStyle.module.scss";
 import { AppModalType } from "../types/AppModal.type";
-import { Spinner } from "@nextui-org/spinner";
+import { Spinner } from "@heroui/spinner";
 
 interface AppLoadingModalProps extends AppModalType {};
 

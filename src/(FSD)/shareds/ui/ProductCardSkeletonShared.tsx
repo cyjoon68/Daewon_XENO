@@ -1,7 +1,7 @@
 import React from "react";
 
 import styles from "@/(FSD)/shareds/styles/SkeletonStyle.module.scss";
-import { Skeleton } from "@nextui-org/skeleton";
+import { Skeleton } from "@heroui/skeleton";
 import ItemShared from "./ItemShared";
 
 const ProductCardSkeletonShared = () => {

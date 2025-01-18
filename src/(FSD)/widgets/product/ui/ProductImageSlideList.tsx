@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Slider from "react-slick";
 import style from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
-import { Chip } from "@nextui-org/chip";
+import { Chip } from "@heroui/chip";
 import TextXSmallShared from "@/(FSD)/shareds/ui/TextXSmallShared";
 
 interface ProductImageSlideListProps {

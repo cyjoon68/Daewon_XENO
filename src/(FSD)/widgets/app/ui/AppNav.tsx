@@ -12,23 +12,23 @@ const AppNav = () => {
             <AppContainer>
                 <AppInner>
                     <div className={styles.inner}>
-                        <LinkBtnShared href={"/menu"} data-hover={false} disableAnimation>
+                        <LinkBtnShared href={"/menu"} disableHover={false} disableAnimation>
                             <IconShared iconType={"menu"} />
                             <TextXSmallShared> 카테고리</TextXSmallShared>
                         </LinkBtnShared>
-                        <LinkBtnShared href={"/reviews"} data-hover={false} disableAnimation>
+                        <LinkBtnShared href={"/reviews"} disableHover={false} disableAnimation>
                             <IconShared iconType={"review"} />
                             <TextXSmallShared>리뷰</TextXSmallShared>
                         </LinkBtnShared>
-                        <LinkBtnShared href={"/"} data-hover={false} disableAnimation>
+                        <LinkBtnShared href={"/"} disableHover={false} disableAnimation>
                             <IconShared iconType={"home"} />
                             <TextXSmallShared>홈</TextXSmallShared>
                         </LinkBtnShared>
-                        <LinkBtnShared href={"/wishlist"} data-hover={false} disableAnimation>
+                        <LinkBtnShared href={"/wishlist"} disableHover={false} disableAnimation>
                             <IconShared iconType={"like"} />
                             <TextXSmallShared>좋아요</TextXSmallShared>
                         </LinkBtnShared>
-                        <LinkBtnShared href={"/mypage"} data-hover={false} disableAnimation>
+                        <LinkBtnShared href={"/mypage"} disableHover={false} disableAnimation>
                             <IconShared iconType={"person"} />
                             <TextXSmallShared>마이</TextXSmallShared>
                         </LinkBtnShared>

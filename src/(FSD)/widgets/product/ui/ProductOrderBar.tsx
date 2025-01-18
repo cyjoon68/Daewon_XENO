@@ -3,10 +3,10 @@
 import React from "react";
 import ProductOrderModal from "./ProductOrderModal";
 import styles from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import AppInner from "../../app/ui/AppInner";
 import ProductLikeBtn from "@/(FSD)/features/product/ui/ProductLikeBtn";
-import { useDisclosure } from "@nextui-org/modal";
+import { useDisclosure } from "@heroui/modal";
 import { useParams } from "next/navigation";
 import AppContainer from "../../app/ui/AppContainer";
 

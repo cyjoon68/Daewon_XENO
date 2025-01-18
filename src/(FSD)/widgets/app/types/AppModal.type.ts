@@ -1,4 +1,4 @@
-import type { ModalProps } from "@nextui-org/modal";
+import type { ModalProps } from "@heroui/modal";
 
 export interface AppModalType {
     isOpen: ModalProps["isOpen"];

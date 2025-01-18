@@ -7,7 +7,7 @@ import styles from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
 import AppContainer from "../../app/ui/AppContainer";
 import AppInner from "../../app/ui/AppInner";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import IconShared from "@/(FSD)/shareds/ui/IconShared";
 
 const ProductInfoBox = ({ product }: { product: ProductInfoType }) => {

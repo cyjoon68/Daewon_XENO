@@ -2,10 +2,10 @@
 
 import React from "react";
 import { AppModalType } from "../types/AppModal.type";
-import { Modal, ModalBody, ModalContent, ModalHeader } from "@nextui-org/modal";
+import { Modal, ModalBody, ModalContent, ModalHeader } from "@heroui/modal";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import DaumPostcode from "react-daum-postcode";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import IconShared from "@/(FSD)/shareds/ui/IconShared";
 import styles from "@/(FSD)/shareds/styles/AppStyle.module.scss";
 

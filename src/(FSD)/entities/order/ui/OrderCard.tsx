@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { OrderInfoType } from "@/(FSD)/shareds/types/orders/OrderInfo.Type";
 import styles from "@/(FSD)/shareds/styles/OrderStyle.module.scss";
 import TextLargeShared from "@/(FSD)/shareds/ui/TextLargeShared";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import IconShared from "@/(FSD)/shareds/ui/IconShared";
 
 import OrderProductInfo from "./OrderProductInfo";

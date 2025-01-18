@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@nextui-org/dropdown";
-import { Button } from "@nextui-org/button";
+import { Dropdown, DropdownTrigger, DropdownMenu, DropdownItem } from "@heroui/dropdown";
+import { Button } from "@heroui/button";
 import IconShared from "./IconShared";
 
 import { useRouter } from "next/navigation";

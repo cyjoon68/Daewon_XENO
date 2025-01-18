@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 
 import style from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 
 
 interface ProductDetailImageProps {

@@ -9,7 +9,7 @@ import { useSetRecoilState } from "recoil";
 import styles from "@/(FSD)/shareds/styles/ProductStyle.module.scss";
 import AppContainer from "../../app/ui/AppContainer";
 import AppInner from "../../app/ui/AppInner";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import IconShared from "@/(FSD)/shareds/ui/IconShared";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";
 import { nameState } from "@/(FSD)/shareds/stores/ProductAtom";

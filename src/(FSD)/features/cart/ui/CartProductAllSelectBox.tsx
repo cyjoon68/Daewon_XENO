@@ -2,10 +2,10 @@
 
 import React from "react";
 import styles from "@/(FSD)/shareds/styles/CartStyle.module.scss";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import AppContainer from "@/(FSD)/widgets/app/ui/AppContainer";
 import AppInner from "@/(FSD)/widgets/app/ui/AppInner";
-import { Checkbox } from "@nextui-org/checkbox";
+import { Checkbox } from "@heroui/checkbox";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";
 import { CartListState } from "@/(FSD)/shareds/stores/CartAtom";
 import { useRecoilState, useSetRecoilState } from "recoil";

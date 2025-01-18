@@ -3,7 +3,7 @@ import styles from "@/(FSD)/shareds/styles/OrderStyle.module.scss";
 import { OrderDeliveryInfoType } from "@/(FSD)/shareds/types/orders/OrderDeliveryInfo.type";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
-import { Button } from "@nextui-org/button";
+import { Button } from "@heroui/button";
 import LinkBtnShared from "@/(FSD)/shareds/ui/LinkBtnShared";
 import OrderReqForm from "@/(FSD)/features/order/ui/OrderReqForm";
 

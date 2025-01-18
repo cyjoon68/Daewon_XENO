@@ -1,8 +1,8 @@
 "use client";
 
 import { useOrderCancle } from "@/(FSD)/features/order/api/useOrderCancle";
-import { Button } from "@nextui-org/button";
-import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@nextui-org/modal";
+import { Button } from "@heroui/button";
+import { Modal, ModalBody, ModalContent, ModalFooter, ModalHeader } from "@heroui/modal";
 import React, { useState } from "react";
 
 interface CancelModalProps {

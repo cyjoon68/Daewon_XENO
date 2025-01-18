@@ -1,7 +1,7 @@
 "use client";
 
 import { Controller } from "react-hook-form";
-import { Textarea, TextAreaProps } from "@nextui-org/input";
+import { Textarea, TextAreaProps } from "@heroui/input";
 import { FormType } from "../types/Form.type";
 
 interface FormTextareaSharedProps extends Omit<TextAreaProps, "name">, FormType { };

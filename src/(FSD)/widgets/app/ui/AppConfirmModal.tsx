@@ -1,10 +1,10 @@
 "use client";
 
-import { Modal, ModalContent } from "@nextui-org/modal";
+import { Modal, ModalContent } from "@heroui/modal";
 import React, { ReactNode, useEffect } from "react";
 import styles from "@/(FSD)/shareds/styles/AppStyle.module.scss";
 import { AppModalType } from "../types/AppModal.type";
-import { Button, ButtonProps } from "@nextui-org/button";
+import { Button, ButtonProps } from "@heroui/button";
 import AppInner from "./AppInner";
 
 interface AppConfirmModal extends AppModalType {
