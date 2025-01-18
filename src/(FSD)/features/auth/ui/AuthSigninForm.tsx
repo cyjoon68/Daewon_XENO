@@ -1,31 +1,27 @@
 "use client";
 
+import React from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import React, { useState } from "react";
 import FormInputShared from "@/(FSD)/shareds/ui/FormInputShared";
 import PasswordInputShared from "@/(FSD)/shareds/ui/PasswordInputShared";
 import { Button } from "@nextui-org/button";
 import { useRouter } from "next/navigation";
 import { z } from "zod";
 import styles from "@/(FSD)/shareds/styles/AuthStyle.module.scss";
-import { UserType } from "@/(FSD)/shareds/types/user/User.type";
-import { useAuthSignin } from "../api/useAuthSignin";
 import TextMediumShared from "@/(FSD)/shareds/ui/TextMediumShared";
 import Link from "next/link";
 import TextSmallShared from "@/(FSD)/shareds/ui/TextSmallShared";
 import { useDisclosure } from "@nextui-org/modal";
 import TextXSmallShared from "@/(FSD)/shareds/ui/TextXSmallShared";
-import AppLoadingModal from "@/(FSD)/widgets/app/ui/AppLoadingModal";
 import AppAlertModal from "@/(FSD)/widgets/app/ui/AppAlertModal";
 import TextLargeShared from "@/(FSD)/shareds/ui/TextLargeShared";
-import { useQueryClient } from "@tanstack/react-query";
+import { authSigninAction } from "../api/authSigninAction";
+import type { AuthUserType } from "../type/AuthUser.type";
 
 const AuthSigninForm = () => {
     const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,16}$/;
-
-    const [userData, setUserData] = useState<UserType | null>(null);
 
     const schema = z.object({
         email: z.string().regex(emailRegex, {
@@ -42,37 +38,27 @@ const AuthSigninForm = () => {
     });
 
     const router = useRouter();
-
-    const queryClient = useQueryClient();
-
-    const onSuccess = (data: any) => {
-        if (!userData) return;
-
-        queryClient.refetchQueries({ queryKey: ["user_read"] });
-
-        localStorage.setItem("access_token", data.accessToken);
-
-
-        router.push("/");
-    }
-
-    const { mutate, isError, isPending } = useAuthSignin({ onSuccess });
-
-    const onSubmit = (data: any) => {
+    
+    const onSubmit = async (data: any) => {
         if ((!data.email) || (!data.password)) return;
 
-        const user: any = {
+        const user: AuthUserType = {
             email: data.email,
             password: data.password
         };
 
-        setUserData(user);
-
-        mutate(user);
+        try {
+            const { data } = await authSigninAction(user);
+            
+            if (data.user) {
+                router.push("/");
+            };
+        } catch (error) {            
+            onErrorModalOpen();
+        };
     };
 
     const { isOpen: isErrorModalOpen, onOpen: onErrorModalOpen, onOpenChange: onErrorModalOpenChange } = useDisclosure();
-    const { isOpen: isLoadingModalOpen, onOpenChange: onLoadingModalOpenChange } = useDisclosure();
 
     return (
         <>
@@ -90,8 +76,7 @@ const AuthSigninForm = () => {
                     <Link href={"/auth/signup"}><TextSmallShared>가입하기</TextSmallShared></Link>
                 </div>
             </form>
-            <AppAlertModal header={<TextLargeShared>다시 한번 확인해주세요.</TextLargeShared>} content={<TextMediumShared>로그인 정보가 일치하지 않습니다.</TextMediumShared>} isDetect={isError} isOpen={isErrorModalOpen} onOpen={onErrorModalOpen} onOpenChange={onErrorModalOpenChange} />
-            <AppLoadingModal isDetect={isPending} isOpen={isLoadingModalOpen} onOpenChange={onLoadingModalOpenChange} />
+            <AppAlertModal header={<TextLargeShared>다시 한번 확인해주세요.</TextLargeShared>} content={<TextMediumShared>로그인 정보가 일치하지 않습니다.</TextMediumShared>} isOpen={isErrorModalOpen} onOpen={onErrorModalOpen} onOpenChange={onErrorModalOpenChange} />
         </>
     );
 };
